@@ -4,14 +4,19 @@
 /**
  * Module dependencies.
  */
-
+// 系统自带的工具
 const util = require('util');
+// 抛错模块
 const createError = require('http-errors');
+// 断言判断
 const httpAssert = require('http-assert');
+// 把某属性或方法绑定到主体上
 const delegate = require('delegates');
+// 根据状态码返回提示语句
 const statuses = require('statuses');
+// Cookies 解析
 const Cookies = require('cookies');
-
+// 私有
 const COOKIES = Symbol('context#cookies');
 
 /**

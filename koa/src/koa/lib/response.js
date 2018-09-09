@@ -4,20 +4,33 @@
 /**
  * Module dependencies.
  */
-
+// http 协议头 disposition 设置，是下载文件还是显示页面
 const contentDisposition = require('content-disposition');
+// 这个 NPM 包注册失败回调
 const ensureErrorHandler = require('error-inject');
+// 缓存
 const getType = require('cache-content-type');
+// http 结束会调用
 const onFinish = require('on-finished');
+// 判断 JSON
 const isJSON = require('koa-is-json');
+// 把字符串转换成 HTML 类型
 const escape = require('escape-html');
+// 类型判断
 const typeis = require('type-is').is;
+// 根据状态码获取文字提示
 const statuses = require('statuses');
+// 关闭一个流
 const destroy = require('destroy');
+// 断言
 const assert = require('assert');
+// 原生自带的
 const extname = require('path').extname;
+// 解析协议头
 const vary = require('vary');
+// 过滤属性
 const only = require('only');
+// 工具类
 const util = require('util');
 
 /**

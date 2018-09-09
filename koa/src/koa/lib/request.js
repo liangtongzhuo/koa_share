@@ -4,17 +4,27 @@
 /**
  * Module dependencies.
  */
-
+// 原生 URL
 const URL = require('url').URL;
+// 下面用于判断 ip
 const net = require('net');
+// 断言判断
 const accepts = require('accepts');
+// 返回 HTTP 内容类型
 const contentType = require('content-type');
+// 原生解析 URL
 const stringify = require('url').format;
+// 解析 URL
 const parse = require('parseurl');
+// 解析 url
 const qs = require('querystring');
+// 类型判断
 const typeis = require('type-is');
+// 判断请求有没有缓存协议头
 const fresh = require('fresh');
+// 过滤对象上的属性
 const only = require('only');
+// 原生工具类
 const util = require('util');
 
 const IP = Symbol('context#ip');
