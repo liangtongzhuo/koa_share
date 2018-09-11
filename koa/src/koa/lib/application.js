@@ -17,7 +17,7 @@ const response = require('./response');
 const compose = require('koa-compose');
 // 判断 json
 const isJSON = require('koa-is-json');
-// 所有请求来的信心都在 context，并且每一个请求都会创建 context，跟随整个请求同步生命周期。
+// 所有请求来的信息都在 context，并且每一个请求都会创建 context，跟随整个请求同步生命周期。
 const context = require('./context');
 // 状态码
 const statuses = require('statuses');

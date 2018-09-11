@@ -24,9 +24,9 @@ const statuses = require('statuses');
 const destroy = require('destroy');
 // 断言
 const assert = require('assert');
-// 原生自带的
+// 获取文件后缀， 如 .html .xml
 const extname = require('path').extname;
-// 解析协议头
+// 操作 vary 协议头
 const vary = require('vary');
 // 过滤属性
 const only = require('only');
