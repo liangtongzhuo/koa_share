@@ -107,7 +107,7 @@ module.exports = class Application extends Emitter {
    * Use the given middleware `fn`.
    *
    * Old-style middleware will be converted.
-   *
+   * use 每一次都 push 一个中间件方法
    * @param {Function} fn
    * @return {Application} self
    * @api public
@@ -142,6 +142,7 @@ module.exports = class Application extends Emitter {
     if (!this.listenerCount('error')) this.on('error', this.onerror);
 
     const handleRequest = (req, res) => {
+      // 每一个请求都会创建 context
       const ctx = this.createContext(req, res);
       return this.handleRequest(ctx, fn);
     };
