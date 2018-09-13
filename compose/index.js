@@ -35,18 +35,19 @@ const getTestMiddWare = (loggerA, loggerB) => async (ctx, next) => {
 
 const mid1 = getTestMiddWare(1, 4);
 const mid2 = getTestMiddWare(2, 3);
-const response = async () => {
-  // 模拟异步读取数据库数据
-  const data = await getData();
-  console.log(data);
-};
-const getData = () =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => resolve("数据已经取出"), 1000);
-  });
 
-  
 middlewares.push(mid1, mid2);
 
 // 调用方式
-compose(middlewares)(null, response);
+compose(middlewares)(null, async () => {
+  const data = await getData();
+  console.log(data);
+});
+
+
+
+function getData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("数据已经取出"), 1000);
+  });
+}
