@@ -52,9 +52,10 @@ module.exports = class Application extends Emitter {
     super();
 
     this.proxy = false;
-    this.middleware = [];
     this.subdomainOffset = 2;
     this.env = process.env.NODE_ENV || 'development';
+
+    this.middleware = [];
     this.context = Object.create(context);
     this.request = Object.create(request);
     this.response = Object.create(response);

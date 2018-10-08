@@ -39,12 +39,12 @@ const mid2 = getTestMiddWare(2, 3);
 middlewares.push(mid1, mid2);
 
 // 调用方式
-compose(middlewares)(null, async () => {
+compose(middlewares)(null, callback);
+
+async function callback(){
   const data = await getData();
   console.log(data);
-});
-
-
+}
 
 function getData() {
   return new Promise((resolve, reject) => {
